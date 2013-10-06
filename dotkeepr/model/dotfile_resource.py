@@ -9,7 +9,7 @@ class DotfileResource:
         self.symlinkPath = '~/.' + os.path.basename(dotfilePath)
         self.dotfilePath = dotfilePath
 
-    def createSymlink(self):
+    def create_symlink(self):
 
         if os.path.islink(os.path.expanduser(self.symlinkPath)):
             os.unlink(os.path.expanduser(self.symlinkPath))

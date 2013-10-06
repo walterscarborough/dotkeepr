@@ -4,10 +4,9 @@
 import ConfigParser
 
 # Project Imports
-#from DotfileResource import DotfileResource
-import DotfileResource
+from model import dotfile_resource
 
-def readConfigFileIntoList(configFile):
+def read_config_file_into_list(configFile):
     parser = ConfigParser.ConfigParser(allow_no_value=True)
     parser.read(configFile)
 
@@ -18,7 +17,7 @@ def readConfigFileIntoList(configFile):
         #print 'Options: ', parser.options(section_name)
         for dotfilePath in parser.options(section_name):
             #print '%s' % (dotfilePath)
-            resource = DotfileResource.DotfileResource(dotfilePath)
+            resource = dotfile_resource.DotfileResource(dotfilePath)
             dotfiles.append(resource)
 
     return dotfiles
